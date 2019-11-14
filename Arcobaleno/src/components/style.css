@@ -1,0 +1,764 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0; }
+
+.header {
+  background-color: #000;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%; }
+
+#phone {
+  font-size: 1.8rem;
+  color: #000;
+  padding-right: 3%; }
+
+#cart {
+  font-size: 2.4rem;
+  color: #fff; }
+
+#navBlock {
+  display: flex;
+  margin: 0 auto;
+  align-items: center; }
+
+.navBar {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.6rem; 
+  cursor: pointer;
+}
+
+#navBlock h1 {
+  font-size: 2.4rem;
+  color: #fff;
+  text-transform: uppercase; }
+
+#buttonTel {
+  background-color: #fff;
+  border-radius: 25px;
+  padding-top: 1%;
+  padding-left: 0.2%;
+  padding-bottom: 0.2%;
+  padding-right: 0.2%;
+  width: 15%;
+  float: right; }
+
+#buttonTel p {
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700; }
+
+
+#myCartIcon{
+  display: flex;
+  align-items: flex-end;
+}
+
+.round{
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: red;
+}
+
+/* StartMenu */
+.startMenuFull {
+   background: url(/img/MainMenuBg.jpg) center no-repeat; 
+  background-size: cover;
+  -webkit-background-size: cover;
+  min-height: 75vh; }
+
+.startMenuFull h1 {
+  padding-top: 5%;
+  text-transform: uppercase;
+  font-size: 4.6rem;
+  font-weight: 700;
+  padding-bottom: 5%; }
+
+.startMenuFull p {
+  font-size: 2rem;
+  font-weight: 700;
+  padding-bottom: 0.5%; }
+
+.buttonStartMenu {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 17%; }
+
+.telegramBut {
+  background-color: #fff;
+  color: #000;
+  margin-right: 5%;
+  padding: 1.2%;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 500; 
+  cursor: pointer;
+}
+
+.callBut {
+  background-color: #000;
+  color: #fff;
+  padding: 1.2%;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 500; 
+  cursor: pointer;
+}
+
+/* Sales */
+.salesActive {
+  background: #fff;
+  color: #000;
+  padding-top: 10%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10%; }
+
+.photoCarouselBlock {
+  background: url(/img/sale1.jpg) center no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  width: 60%;
+  height: 40vh; }
+
+.salesActive h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2.8rem;
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 3%; }
+
+.salesActive p {
+  font-weight: 500;
+  text-align: center;
+  font-size: 1.6rem;
+  padding-bottom: 25%; }
+
+.buttonCarouselActive {
+  padding: 2%;
+  background-color: #000;
+  color: #fff;
+  width: 35%;
+  text-align: center;
+  border-radius: 20px;
+  margin: 0 auto;
+  cursor: pointer; }
+
+img {
+  width: 100%;
+  max-height: 100vh; }
+
+#fullCarouselBlock {
+  min-height: 60vh;
+  margin: 0 auto;
+  max-width: 1150px;
+  background-color: #f5f5f5; }
+
+.photoCarouselBlockItem1 {
+  background: url(/img/birthdayCarousel.jpg) center no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  width: 60%;
+  height: 40vh; }
+
+.itemSales1,
+.itemSales2 {
+  background: #fff;
+  color: #000;
+  padding-top: 10%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10%; }
+
+.itemSales2 h1,
+.itemSales1 h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-align: center;
+  line-height: 4rem;
+  padding-top: 5%;
+  padding-bottom: 5%; }
+
+.itemSales2 p,
+.itemSales1 p {
+  font-weight: 500;
+  text-align: center;
+  font-size: 1.6rem;
+  padding-bottom: 10%; }
+
+.photoCarouselBlockItem2 {
+  background: url(/img/carouselBlock2.jpg) center no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  width: 60%;
+  height: 40vh; }
+
+/* PIZZA AND DRINKS */
+.menuFullBlock {
+  height: auto; }
+
+.pizzaBlock {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2%;
+  padding-bottom: 3%; }
+
+.imgBlock {
+  background-color: transparent;
+
+  margin-bottom: 5%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: opacity 0.1s linear; 
+
+}
+
+.pizzaName {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #000;
+  font-weight: 600;
+  padding-bottom: 2.5%; }
+
+.pizzaComponents,
+.pizzaSize {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #000;
+  padding-bottom: 2%; 
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+#myPizzaFullBlock{
+  background-color: #f5f5f5;
+}
+
+.pizzaPrice {
+  text-align: center;
+  font-size: 1.5rem;
+  color: red;
+  padding-bottom: 5%; }
+
+.buttonPizza {
+  padding: 3%;
+  background-color: #fff;
+  color: #000;
+  font-size: 1.4rem;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer; 
+  border: 1px solid black;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.favouritePizza{
+  padding-top: 2%;
+  font-family: 'Yeon Sung', cursive;
+  font-size: 4.5rem;
+  text-align: center;
+  color: #000;
+}
+
+.buttonPizza:hover{
+  transition: 0.5s;
+  background-color: #000;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.myFullPizza {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-around; 
+  padding-bottom: 3%;
+  padding-top: 3%;
+}
+
+.pizza {
+  width: 30%;
+  /*background-color: #dfe6e9;*/
+  /* border: 1px solid yellow; */
+  padding-bottom: 3%; 
+  margin-bottom: 2%;
+  box-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+
+.titlePizza {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #000;
+  padding-top: 2%; }
+
+/*ABOUTUS*/
+.aboutUsFull {
+  background: url(/img/location.jpg) center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
+.aboutUsFull h1 {
+  text-align: center;
+  font-size: 3rem;
+  padding-top: 2%;
+  color: #fff;
+  font-weight: 700; }
+
+.locationFull {
+  padding-top: 3%;
+  padding-bottom: 3%; }
+
+.location {
+  text-align: left;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 700; }
+
+.callFull {
+  padding-bottom: 3%; }
+
+.answerCall {
+  text-align: right;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600; }
+
+.call {
+  text-align: right;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 700; }
+
+.answerLocation {
+  text-align: left;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600; }
+
+.mailFull {
+  padding-bottom: 5%; }
+
+.mail {
+  text-align: left;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 700; }
+
+.answerMail {
+  text-align: left;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600; }
+
+/* ФУТЕР */
+.footer {
+  background-color: #353b48;
+  color: #fff; }
+
+.fullTextFooter {
+  padding-top: 3%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3%; }
+
+.fullTextFooter h4 {
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 10%; }
+
+.fullTextFooter p {
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-align: center;
+  cursor: pointer; }
+
+.iconsFooter {
+  display: flex;
+  justify-content: center; }
+
+#insta {
+  margin-left: 5%;
+  margin-right: 5%; }
+
+.iconsFooter i {
+  color: #fff;
+  font-size: 2.8rem;
+  cursor: pointer; }
+
+.footer h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding-bottom: 1.5%; }
+
+
+#fullDrinks{
+
+}
+/* CartComponent */
+
+.orderThis{
+  /* background: url("https://cdn.pixabay.com/photo/2014/05/30/07/23/pizza-boxes-358029_1280.jpg") center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover; */
+  background-color: #1a1a1a;
+}
+
+.cartSpace button{
+  background-color:	#202d21;
+  border: 1px solid #fff;
+  min-width: 37.2px;
+  height: auto;
+}
+
+.cartTitle{
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 600;
+  padding-top: 3%;
+  padding-bottom: 3.5%;
+  color: #fff;
+}
+
+.fullPrice{
+  text-align: center;
+  color: #fff;
+  font-size: 3.5rem;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.drinksCart{
+  border: 1px solid #fff;
+  background-color: #000;
+  color: #fff;
+  padding: 1%;
+  border-radius: 20px;
+  margin: 0 auto;
+  text-align: center;
+  width: 25%;
+  margin-bottom: 3%;
+  transition: 0.5s;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.drinksCart:hover{
+
+  transition: 0.5s;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
+
+.paymentCart{
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+  border-radius: 25px;
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 0 auto;
+  width: 25%;
+  padding: 1%;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 3%;
+  transition: 0.5s;
+}
+
+.paymentCart:hover{
+  transition: 0.5s;
+  background-color: #000;
+  border-color: #fff;
+  color: #fff;
+}
+
+.cartSpace{
+  text-align: center;
+}
+
+.cartSpace p{
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* LoginComponent */
+.logInPanel{
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+ 
+.logInPanel p{
+  color: #fff;
+  font-size: 2.4rem;
+}
+
+/* PAYMENT */
+#fullPaymentBlock{
+
+}
+
+#fullPaymentBlock h2{
+  text-align: center;
+  font-weight: 600;
+  padding-top: 1.75%;
+  font-size: 3.2rem;
+}
+
+.radioSelectionPay{
+  padding-top: 1%;
+  display: flex;
+  justify-content: center;
+}
+
+.radioSelectionPay label{
+  margin-right: 3.5%;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.radioSelectionPay input{
+  margin-right: 0.5%;
+}
+
+.yourSelection{
+  text-align: center;
+  padding-top: 2%;
+  font-size: 2.2rem;
+}
+
+.amoutOfPayment{
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  padding-bottom: 1.5%;
+}
+
+.buttonPayment{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 18%;
+  padding-bottom: 3%;
+}
+
+.fullCard{
+  display: flex;
+  justify-content: center;
+}
+
+.frontCard{
+  background-color: #FBEAFF;
+  width: 350px;
+  height: 150px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+.topFrontLabel{
+  text-align: center;
+  padding-top: 1.5%;
+  font-size: 1.3rem;
+  color: darkgray;
+  padding-bottom: 6%;
+}
+
+.frontCard input{
+  border: none;
+  border-bottom: 2px solid gray;
+  text-align: center;
+  background-color: transparent;
+  font-size: 2rem;
+}
+
+.inputWithCardNumb{
+  display: flex;
+  justify-content: center;
+}
+
+.term{
+  padding-top: 5%;
+  display: flex;
+}
+
+.term select{
+  padding-right: 2%;
+  margin-right: 5%;
+  /* max-height: 85%; */
+}
+
+.term p{
+  margin-right: 8%;
+  padding-left: 5%;
+  font-size: 1.7rem;
+  color: gray;
+}
+
+.cardBack{
+  width: 200px;
+  height: 100px;
+  box-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+
+.cardBackTop{
+  width: 100%;
+  height: 20%;
+  background-color: lightgray;
+}
+
+.cardBackBottom{
+  width: 100%;
+  height: 80%;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+
+.cardBackBottom input{
+  width: 60%;
+  border: none;
+  border-bottom: 2px solid gray;
+  font-size: 2rem;
+  text-align: center;
+  background-color: transparent;
+}
+
+.questRound{
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: gray;
+  color: lightgray;
+  font-size: 2.2rem;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.questRound:hover{
+  transition: 0.25s;
+  background-color: transparent;
+  border: 1px solid gray;
+  color: gray;
+}
+
+.cashPayment{
+  padding-bottom: 3%;
+}
+
+.buttonCashPayment{
+  padding: 2%;
+  background-color: #000;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  width: 25%;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.buttonCashPayment:hover{
+  transition: 1s;
+  border: 2px solid #000;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Media Types */
+
+@media screen and (max-width: 992px){
+
+}
+
+@media screen and (max-width: 768px){
+  
+.myFullPizza{
+  display: flex;
+  flex-direction: column;
+ 
+}
+.pizza{
+  width: 75%;
+  margin: 0 auto;
+}
+
+.buttonPizza{
+  width: 60%;
+}
+
+.fullTextFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fullTextFooter h4{
+  padding-bottom: 1%;
+}
+
+.contactsFooter h4{
+  padding-bottom: 5%;
+  padding-top: 2%;
+}
+
+#startMenuFull{
+  width: 100%;
+}
+
+}
+
+@media screen and (max-width: 450px){
+  .fullTextFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .fullTextFooter h4{
+    padding-bottom: 1%;
+  }
+
+  .contactsFooter h4{
+    padding-bottom: 5%;
+    padding-top: 2%;
+  }
+
+  .contactsFooter{
+    padding-bottom: 5%;
+  }
+
+  .pizza{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+}
+
+/*# sourceMappingURL=style.css.map */
+
