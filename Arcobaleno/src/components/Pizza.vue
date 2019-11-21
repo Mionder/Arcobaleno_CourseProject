@@ -26,7 +26,7 @@
            
             <!-- <input type="checkbox" v-model = "MoreOne"> -->
          <div class="myFullPizza">   
-            <div class="pizza" v-for="item in pizzaMas">
+            <div class="pizza" v-for="item in pizzaMas" v-bind:key="item._id">
                  <div>
                      <img :src="item.img" alt="" class="imgBlock">
                  </div>
@@ -129,8 +129,16 @@ export default{
     },
     methods:{
         addPizza(value){
-            value.amount = 1;
-            this.$store.commit('setPizza', value);
+            // Vue.set(value, "amount", 1);
+            // const pizza = value;
+            // pizza.amount = 1;
+
+            // const pizza = { ...value }
+            // pizza.amount = 1
+
+            // const pizza = { ...value, amount: 1 }
+
+            this.$store.commit('setPizza', { ...value, amount: 1 });
         },
         addDrink(value){
             value.amount = 1;

@@ -4,22 +4,23 @@
 
         <div class="orderThis">
             <div class="container">
-                    <h1 class="cartTitle">Ваша корзина мрії:</h1>
-                <div class="cartSpace">
-                    <p v-for="item in PizzaMas" v-if="item.amount>0"> 
-                        {{item.name}}
-                        <!-- {{item.size}} -->
-                       {{item.amount}}
-                        <button @click="plusAmount(item)">+</button>
-                        <button @click="minusAmount(item)">-</button>  
-                        {{item.price}}
-                        
-                    </p> 
-                </div>
+                <h1 class="cartTitle">Ваша корзина мрії:</h1>
+                    <div class="cartSpace">
+                        <p v-for="item in PizzaMas"  v-bind:key="item._id"> 
+                            <!-- v-if="item.amount>0" no! computed PizzaMas with -->
+                            {{item.name}} {{item.amount}}
+                            <!-- {{item.size}} -->
+                       
+                            <button @click="plusAmount(item)">+</button>
+                            <button @click="minusAmount(item)">-</button>  
+                            {{item.price}}
+                            
+                        </p> 
+                    </div>
 
 
                     <div class="fullPrice">
-                        До сплати: <span>{{fullPrice()}}</span> грн.
+                        До сплати: <span>{{fullPrice}}</span> грн.
                         <p>Ви отримаєте: {{fullBonus()}} бонусів  </p>
                     </div>
 
@@ -51,39 +52,45 @@
 <script>
 import Header from './Header.vue'
 import Footer from './Footer.vue'
+import {mapGetters} from "vuex"
+
 export default {
     components:{
         Header,
         Footer
     },
-    data: function(){
+    data() {
         return{
-            PizzaMas: [], 
+            // PizzaMas: [], 
             bonuses: 0,
            // fullPriceCart: 0,
             DrinkMas: []
         }
     },
     computed: {
-        
-    },
-    methods:{
-            fullPrice(){
-            //alert(this.PizzaMas.length);
+        ...mapGetters({
+            PizzaMas: 'getPizza'
+        }),
+        fullPrice() {
              var fullPriceCart=0;
             for(let i=0;i<this.PizzaMas.length; i++){
                    fullPriceCart += this.PizzaMas[i].price * this.PizzaMas[i].amount;
             }
             return fullPriceCart;
         },
-
+        // PizzaMas: function() {
+        //     return this.$store.getters.getPizza;
+        // }
+    },
+    methods:{
         goToPayment(){
-            this.$store.commit('setFullPrice', this.fullPrice());
+            this.$store.commit('setFullPrice', this.fullPrice);
             this.$router.push('/payment/');
         },
 
         plusAmount(item){
-            item.amount++;
+           // item.amount++;
+             this.$store.commit("incAmount", item)
         },
         minusAmount(item){
             if(item.amount>0)
@@ -96,20 +103,20 @@ export default {
             var fullBonusCart = 0;
 
             //for(let i=0; i<this.PizzaMas.length;i++){
-                fullBonusCart = this.fullPrice() * 0.02;
+                fullBonusCart = this.fullPrice * 0.02;
            // }
            
             return fullBonusCart.toFixed(2);
         }
     },
     mounted(){
-        this.PizzaMas = this.$store.getters.getPizza;
+       
         this.DrinkMas = this.$store.getters.getDrink;
     },
-    fiters:{
-        grivnFilt: function(){
-            return this.PizzaMas.price + "UAH";
-        }
-    }
+    // fiters:{
+    //     grivnFilt: function(){
+    //         return this.PizzaMas.price + "UAH";
+    //     }
+    // }
 }
 </script>

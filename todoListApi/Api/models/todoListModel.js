@@ -38,6 +38,10 @@ var TaskSchema = new Schema({
     type: String,
     required: 'Kindly enter the name of the task'
   },
+  price: {
+    type: Number,
+    required: true
+  },
   Created_date: {
     type: Date,
     default: Date.now

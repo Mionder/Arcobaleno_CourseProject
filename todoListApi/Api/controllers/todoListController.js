@@ -4,7 +4,7 @@
 var mongoose = require('mongoose'),
 User = mongoose.model('Users'),
 Drink = mongoose.model('Drinks'),
-  Task = mongoose.model('Tasks');
+Task = mongoose.model('Tasks');
 
 
 exports.list_all_tasks = function(req, res) {

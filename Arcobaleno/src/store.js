@@ -17,13 +17,19 @@ const store = new Vuex.Store({
             //state.cartShop.push(pizza);
 
             let result = state.cartShop.find(item => item.name == pizza.name)
+    
             if(result == undefined) state.cartShop.push(pizza);
-            else { for(let i=0;i<state.cartShop.length;i++)
-            {
-                if(state.cartShop[i].name == pizza.name)
-                state.cartShop[i].amount++
+            else { 
+                for(let i=0;i<state.cartShop.length;i++)
+                    {
+                        if(state.cartShop[i].name == pizza.name)
+                            state.cartShop[i].amount++
+                    }
             }
-        }
+        },
+        incAmount: (state, item) => {
+            const index = state.cartShop.findIndex(el => el._id === item._id);
+            state.cartShop[index].amount++;
         },
         setDrink: (state, drink) => {
             let result = state.cartShop.find(item => item.name == drink.name)
