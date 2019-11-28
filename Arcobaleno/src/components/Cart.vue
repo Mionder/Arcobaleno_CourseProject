@@ -8,20 +8,23 @@
                     <div class="cartSpace">
                         <p v-for="item in PizzaMas"  v-bind:key="item._id"> 
                             <!-- v-if="item.amount>0" no! computed PizzaMas with -->
-                            {{item.name}} {{item.amount}}
+                            <img :src="item.img" alt="" class="imgCartSpan">
+                            <span class="nameCartSpan">{{item.name}}</span> 
+                            
                             <!-- {{item.size}} -->
                        
                             <button @click="plusAmount(item)">+</button>
+                            <span class="amountCartSpan">{{item.amount}}</span>
                             <button @click="minusAmount(item)">-</button>  
-                            {{item.price}}
+                            <span class="redCartSpan">{{item.price}} грн.</span>
                             
                         </p> 
                     </div>
 
 
                     <div class="fullPrice">
-                        До сплати: <span>{{fullPrice}}</span> грн.
-                        <p>Ви отримаєте: {{fullBonus()}} бонусів  </p>
+                        <span class="forPayment">До сплати:</span> <span class="forPaymentAmount">{{fullPrice}} грн.</span>
+                        <!-- <p>Ви отримаєте: {{fullBonus()}} бонусів  </p> -->
                     </div>
 
                     <router-link class="router" v-bind:to="'/'"><div class="drinksCart">
@@ -69,13 +72,17 @@ export default {
     },
     computed: {
         ...mapGetters({
-            PizzaMas: 'getPizza'
+            PizzaMas: 'getPizza',
+            PizzaMas: 'getDrink'
         }),
         fullPrice() {
              var fullPriceCart=0;
-            for(let i=0;i<this.PizzaMas.length; i++){
-                   fullPriceCart += this.PizzaMas[i].price * this.PizzaMas[i].amount;
-            }
+            // for(let i=0;i<this.PizzaMas.length; i++){
+            //        fullPriceCart += this.PizzaMas[i].price * this.PizzaMas[i].amount;
+            // }
+            this.PizzaMas.forEach(function(item, i, arr){
+                fullPriceCart += arr[i].price * arr[i].amount; 
+            });
             return fullPriceCart;
         },
         // PizzaMas: function() {
@@ -94,7 +101,7 @@ export default {
         },
         minusAmount(item){
             if(item.amount>0)
-            item.amount--;
+            this.$store.commit("decAmount", item);
         },
         myBonus(item){
             return item.price * 0.02;
@@ -111,7 +118,7 @@ export default {
     },
     mounted(){
        
-        this.DrinkMas = this.$store.getters.getDrink;
+        
     },
     // fiters:{
     //     grivnFilt: function(){

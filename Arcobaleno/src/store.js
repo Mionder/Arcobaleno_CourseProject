@@ -31,6 +31,10 @@ const store = new Vuex.Store({
             const index = state.cartShop.findIndex(el => el._id === item._id);
             state.cartShop[index].amount++;
         },
+        decAmount: (state,item) => {
+            const indexDec = state.cartShop.findIndex(el => el._id === item._id);
+            state.cartShop[indexDec].amount--;
+        },
         setDrink: (state, drink) => {
             let result = state.cartShop.find(item => item.name == drink.name)
             if(result == undefined) state.cartShop.push(drink);

@@ -10,7 +10,12 @@ h1, h2, h3, h4, h5, h6 {
 .header {
   background-color: #000;
   padding-top: 1.5%;
-  padding-bottom: 1.5%; }
+  padding-bottom: 1.5%; 
+  position: fixed;
+  width: 100%;
+  display: block;
+  z-index:99999999;
+}
 
 #phone {
   font-size: 1.8rem;
@@ -75,6 +80,8 @@ h1, h2, h3, h4, h5, h6 {
    background: url(/img/MainMenuBg.jpg) center no-repeat; 
   background-size: cover;
   -webkit-background-size: cover;
+  padding-top: 7.5%;
+  padding-bottom: 5%;
   min-height: 75vh; }
 
 .startMenuFull h1 {
@@ -116,6 +123,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Sales */
+.fullSale{
+  
+}
+
 .salesActive {
   background: #fff;
   color: #000;
@@ -416,17 +427,59 @@ img {
 /* CartComponent */
 
 .orderThis{
-  /* background: url("https://cdn.pixabay.com/photo/2014/05/30/07/23/pizza-boxes-358029_1280.jpg") center no-repeat;
+  background: url("../img/profile.jpeg") center no-repeat;
   -webkit-background-size: cover;
-  background-size: cover; */
-  background-color: #1a1a1a;
+  background-size: cover;
+  /* background-color: #1a1a1a; */
+  padding-top: 7%;
+}
+
+.redCartSpan{
+  color: #fa0004;
+  font-weight: 700;
+  font-size: 3rem;
+  padding-left: 2.5%;
 }
 
 .cartSpace button{
-  background-color:	#202d21;
-  border: 1px solid #fff;
+  background-color:	#fff;
+  border: 1px solid #a6a6a6;
   min-width: 37.2px;
-  height: auto;
+  min-height: 37.2px;
+  border-radius: 18.6px;
+  color: #000;
+}
+
+.amountCartSpan{
+  font-size: 3rem;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+}
+
+.nameCartSpan{
+  padding-right: 4%;
+  font-size: 3rem;
+  padding-left: 1%;
+}
+
+.imgCartSpan{
+ width: 75px;
+ height: 75px;
+ border-radius: 37.5px;
+}
+
+.forPayment{
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  font-size: 4rem;
+}
+
+.forPaymentAmount{
+  text-align: right;
+  font-weight: 600;
+  color: #fa0004;
+  font-size: 4rem;
 }
 
 .cartTitle{
@@ -482,7 +535,7 @@ img {
   padding: 1%;
   cursor: pointer;
   font-weight: 600;
-  margin-bottom: 3%;
+  margin-bottom: 4.5%;
   transition: 0.5s;
 }
 
@@ -495,6 +548,7 @@ img {
 
 .cartSpace{
   text-align: center;
+  padding-bottom: 5%;
 }
 
 .cartSpace p{
@@ -517,7 +571,7 @@ img {
 
 /* PAYMENT */
 #fullPaymentBlock{
-
+  padding-top: 5%;
 }
 
 #fullPaymentBlock h2{
@@ -558,8 +612,9 @@ img {
 
 .buttonPayment{
   display: flex;
-  justify-content: flex-end;
-  padding-right: 18%;
+  justify-content: center;
+  /* padding-right: 18%; */
+  width: 100%;
   padding-bottom: 3%;
 }
 
