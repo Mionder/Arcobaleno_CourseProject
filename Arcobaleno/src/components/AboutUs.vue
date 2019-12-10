@@ -13,7 +13,7 @@
             
             <div class="mailFull">
                 <p class="mail">-Я хочу залишити свій відгук, де я можу це зробити?</p>
-                <div class="answerMail">-Ви можете надіслати свій відгук на пошту: arcobalenopizzafaqs@gmail.com</div>
+                <p class="answerMail">-Ви можете надіслати свій відгук на пошту: arcobalenopizzafaqs@gmail.com</p>
             </div>
         </div>
     </div>
@@ -24,3 +24,37 @@ export default {
     
 }
 </script>
+
+<style scoped>
+.aboutUsFull h1{
+    padding-bottom: 2.5%;
+    font-size: 4rem;
+}
+
+.locationFull,
+.mailFull{
+    background-color: rgb(54, 54, 54);
+    opacity: 0.9;
+    border-radius: 25px;
+    max-width: 65%;
+    margin-bottom: 2%;
+    float: left;
+    padding: 2%;
+}
+
+.callFull{
+    float: right;
+    background-color: rgb(54, 54, 54);
+    opacity: 0.9;
+    border-radius: 25px;
+    max-width: 65%;
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+.locationFull p,
+.callFull p,
+.mailFull p{
+     text-align: center;
+}
+</style>

@@ -1,8 +1,8 @@
 <template>
 
-<div>
+<div >
     <Header />
-
+<div class="payMent">
     <div class="container" id="fullPaymentBlock">
         <h2>Оберіть варіант оплати:</h2>
         <div class="radioSelectionPay">
@@ -14,50 +14,7 @@
         <div class="cardPayment" v-if="typePayment=='card'">
             <p class="yourSelection">Ви обрали сплату карткою</p>
             <p class="amoutOfPayment">До сплати: {{price}} грн.</p>
-            <!-- <div class="fullCard">
-                <div class="frontCard">
-                    <p class="topFrontLabel">Введіть реквізити платіжної карти</p>
-                    <div class="inputWithCardNumb">
-                        <input type="text" placeholder="Номер картки" v-model="numberCard">
-                    </div>
-                    <div class="term">
-                        <p>Термін дії:</p>
-                        <select name="" id="">
-                            <option value="1">01</option>
-                            <option value="2">02</option>
-                            <option value="3">03</option>
-                            <option value="4">04</option>
-                            <option value="5">05</option>
-                            <option value="6">06</option>
-                            <option value="7">07</option>
-                            <option value="8">08</option>
-                            <option value="9">09</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-
-                        <select name="" id="">
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                            <option value="21">21</option>
-                            <option value="22">22</option>
-                            <option value="23">23</option>
-                            <option value="24">24</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="cardBack">
-                    <div class="cardBackTop">
-
-                    </div>
-                    <div class="cardBackBottom">
-                        <input type="text" v-model="CVV2" placeholder="CVV2/CVC2">
-                        <div class="questRound">?</div>
-                    </div>
-                </div>
-            </div> -->
+            
 
             <div class="buttonPayment">
                 <!-- <input type="hidden" name="signature" value="jeohKm81/7zAxJxT6MWW/60HSMw=" /> -->
@@ -65,9 +22,9 @@
                 <form method="POST" accept-charset="utf-8" action="https://www.liqpay.ua/api/3/checkout">
                     <input type="hidden" name="data" :value="this.paymentLiqPayData()" />
                     <input type="hidden" name="signature" :value="this.paymentLiqPaySignature()" />
-                    <button>
-                        <img src="https://static.liqpay.ua/buttons/logo-small.png" name="btn_text"/>
-                        <span>Оплата</span>
+                    <button class="payForLiqPay" v-show="this.price!=0">
+                        <img name="btn_text"/>
+                        <p>Оплата</p>
                     </button>
                 </form>
             </div>
@@ -81,6 +38,7 @@
 
         
     </div>
+</div>
 
     <Footer />
     </div>
@@ -100,7 +58,7 @@ export default {
     data: function(){
         return{
             typePayment: "",
-            price: Cart.data,
+            price: Cart.data, 
         }
     },
     methods: {

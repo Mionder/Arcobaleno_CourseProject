@@ -28,7 +28,9 @@ h1, h2, h3, h4, h5, h6 {
 
 #navBlock {
   display: flex;
-  margin: 0 auto;
+  justify-content: space-around;
+  flex-direction: row;
+  /* margin: 0 auto; */
   align-items: center; }
 
 .navBar {
@@ -255,7 +257,7 @@ img {
 }
 
 #myPizzaFullBlock{
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
 }
 
 .pizzaPrice {
@@ -571,7 +573,14 @@ img {
 
 /* PAYMENT */
 #fullPaymentBlock{
-  padding-top: 5%;
+  padding-top: 7%;
+  min-height: 70vh;
+  padding-bottom: 3%;
+ 
+}
+
+.payMent{
+  background-color: #f5f5f5;
 }
 
 #fullPaymentBlock h2{
@@ -745,14 +754,63 @@ img {
   color: #000;
 }
 
+.payForLiqPay{
+  padding: 25%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: 1px solid #000;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.payForLiqPay p{
+  margin: 0;
+}
+
 /* Media Types */
 
 @media screen and (max-width: 992px){
-
+  #buttonTel{
+    width: 25%;
+  }
+  .drinksCart,
+  .paymentCart,
+  .buttonCashPayment{
+    width: 50%;
+  }
+  #fullPaymentBlock{
+    padding-top: 10%;
+  }
 }
 
 @media screen and (max-width: 768px){
-  
+  .header{
+    position: relative;
+  }
+  #fullPaymentBlock{
+    padding-top: 5%;
+  }
+  #buttonTel{
+    width: 35%;
+  }
+  .radioSelectionPay{
+    display: flex;
+    flex-direction: column;
+  }
+  .radioSelectionPay label{
+    text-align: center;
+  }
+  #navBlock{
+    display: flex;
+    flex-direction: column;
+  }
+  .navBar{
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    }
 .myFullPizza{
   display: flex;
   flex-direction: column;
@@ -766,6 +824,7 @@ img {
 .buttonPizza{
   width: 60%;
 }
+
 
 .fullTextFooter {
   display: flex;
@@ -794,7 +853,14 @@ img {
     flex-direction: column;
     justify-content: space-between;
   }
-
+  .drinksCart,
+  .paymentCart,
+  .buttonCashPayment{
+    width: 75%;
+  }
+  #buttonTel{
+    width: 50%;
+  }
   .fullTextFooter h4{
     padding-bottom: 1%;
   }
@@ -806,6 +872,9 @@ img {
 
   .contactsFooter{
     padding-bottom: 5%;
+  }
+  .startMenuFull h1{
+    font-size: 3rem;
   }
 
   .pizza{
