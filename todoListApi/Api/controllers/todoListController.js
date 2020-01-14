@@ -4,15 +4,15 @@
 var mongoose = require('mongoose'),
 User = mongoose.model('Users'),
 Drink = mongoose.model('Drinks'),
-Task = mongoose.model('Tasks');
-
+Task = mongoose.model('Tasks'),
+Coupon = mongoose.model('Coupons');
 
 exports.list_all_tasks = function(req, res) {
   Task.find({}, function(err, task) {
     if (err)
       res.send(err);
     res.json(task);
-  });
+  }); 
 };
 
 
@@ -160,5 +160,59 @@ exports.delete_a_drink = function(req, res) {
     if (err)
       res.send(err);
     res.json({ message: 'Drink successfully deleted' });
+  });
+};
+
+
+/* COUPONS Settings */
+
+exports.list_all_coupons = function(req, res) {
+  Coupon.find({}, function(err, coupon) {
+    if (err)
+      res.send(err);
+    res.json(coupon);
+  });
+};
+
+
+
+
+exports.create_a_coupon = function(req, res) {
+  var new_coupon = new Coupon(req.body);
+  new_coupon.save(function(err, coupon) {
+    if (err)
+      res.send(err);
+    res.json(coupon);
+  });
+};
+
+
+exports.read_a_coupon = function(req, res) {
+  Coupon.findById(req.params.couponId, function(err, coupon) {
+    if (err)
+      res.send(err);
+    res.json(coupon);
+  });
+};
+
+
+exports.update_a_coupon = function(req, res) {
+  Coupon.findOneAndUpdate({_id: req.params.couponId}, req.body, {new: true}, function(err, coupon) {
+    if (err)
+      res.send(err);
+    res.json(coupon);
+  });
+};
+ 
+
+exports.delete_a_coupon = function(req, res) {
+
+
+  Coupon.remove({
+    _id: req.params.couponId
+  }, function(err, coupon) {
+    if (err)
+      res.send(err);
+    res.json({ message: 'Coupon successfully deleted' });
   });
 };

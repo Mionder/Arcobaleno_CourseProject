@@ -3,11 +3,11 @@
         <!-- <Header /> -->
         <div class="logInPanel">
             <p>Name</p>
-            <input type="text" v-model ="login">
+            <input type="text" v-model ="loginEnter">
             <p>Password</p>
-            <input type="text" v-model="password">
-            <p>Telephone</p>
-            <input type="text" v-model="telephone"> 
+            <input type="text" v-model="passwordEnter">
+            <!-- <p>Telephone</p> -->
+            <!-- <input type="text" v-model="telephone">  -->
             <button @click="auth()">OK</button>
         </div>
         
@@ -28,21 +28,32 @@ export default {
     },
     data: function() {
         return {
-            login: '',
-            password: '',
-            telephone: ''
+            loginEnter: '',
+            passwordEnter: '',
+            // telephone: ''
         }
     },
     methods: {
         auth() {
-            Vue.axios.get("http://localhost:3000/users/"+this.login).then((elem)=>{
-                if(elem.data === null){
-                    return
+            Vue.axios.get("http://localhost:3000/users").then((elem)=>{
+                for(let i=0;i<elem.data.length;i++){
+                    if((elem.data[i].name == this.loginEnter)&&(elem.data[i].password == this.passwordEnter)){
+                        // alert('123');
+                        this.$store.commit('setUser', elem.data[i]);
+                        this.$router.push('/');
+                    }
+                    else{
+                        console.log("entered", this.loginEnter);
+                        console.log(elem.data[i].name);
+                    }
                 }
-                else {
-                    this.$store.commit('setUser', elem.data);
-                    this.$router.push('/');
-                }
+                // if(elem.data === null){
+                //     return
+                // }
+                // else {
+                //     this.$store.commit('setUser', elem.data);
+                //     this.$router.push('/');
+                // }
             })
         }
     }

@@ -30,4 +30,13 @@ module.exports = function(app) {
     .get(todoList.read_a_drink)
     .put(todoList.update_a_drink)
     .delete(todoList.delete_a_drink);
+
+    app.route('/coupons')
+    .get(todoList.list_all_coupons)
+    .post(todoList.create_a_coupon);
+
+  app.route('/coupons/:couponId')
+    .get(todoList.read_a_coupon)
+    .put(todoList.update_a_coupon)
+    .delete(todoList.delete_a_coupon);
 };

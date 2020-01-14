@@ -57,7 +57,9 @@ const store = new Vuex.Store({
             return state.cartShop;
         },
         getUser: (state)=>{
+            console.log(state.myUser);
             return state.myUser;
+            
         },
         getDrink: (state) =>{
             return state.cartShop;

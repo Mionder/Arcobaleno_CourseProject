@@ -9,7 +9,7 @@
 
 
 <div class="container" id="myPizzaFullBlock">
-    <h1 class="favouritePizza">Обери свою улюблену піцу</h1>
+    <h1 class="favouritePizza" @click="logout()">Обери свою улюблену піцу</h1>
     <!-- <select name="" id="" v-model="typePizza">
                <option value="meat">М'ясна</option>
                <option value="vegeb">Овочева</option>
@@ -35,6 +35,12 @@
                  <p class="pizzaSize">{{item.size}} грам</p>
                  <h3 class="pizzaPrice">{{item.price}} грн.</h3>
                  <div class="buttonPizza" @click="addPizza(item)">Додати до корзини</div>
+                 <select name="" id="" v-for="zalipa in item.meal">
+                     <option value="">
+                            {{zalipa.size}}
+                     </option>
+                     <option value="">{{zalipa.price}}</option>
+                 </select>
              </div>
         </div>
 </div>
@@ -103,7 +109,9 @@ export default{
         }),
         Vue.axios.get("http://localhost:3000/drinks").then((element)=>{
             this.drinksMas = element.data;
-        })
+        }),
+        this.$store.getters.getUser;
+        
     },
     computed: {
         // filt: function(){
@@ -143,8 +151,12 @@ export default{
         addDrink(value){
             value.amount = 1;
             this.$store.commit('setDrink', value);
+        },
+        logout(){
+            this.$store.commit('setUser', "");
+            alert('logOuted00');
         }
-    //     diff: function(arr1,arr2){
+    //     diff: funct,ion(arr1,arr2){
     //       var ret =[];
     //       arr1.sort();
     //       arr2.sort();

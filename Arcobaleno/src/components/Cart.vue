@@ -115,6 +115,7 @@ export default {
            
             return fullBonusCart.toFixed(2);
         }
+        
     },
     mounted(){
        

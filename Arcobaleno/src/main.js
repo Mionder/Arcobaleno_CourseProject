@@ -9,12 +9,16 @@ import Cart from './components/Cart.vue'
 import store from './store.js'
 import Login from './components/Login.vue'
 import Payment from './components/Payment.vue'
+import Registration from './components/Registration.vue'
+import UserProfile from './components/UserProfile.vue'
 
 const routes = [
     {path: '/', component: Pizza},
     {path: '/cart', component: Cart, meta: {requiresAuth: true}},
     {path: '/login', component: Login},
-    {path: '/payment', component: Payment}
+    {path: '/payment', component: Payment},
+    {path: '/registration', component: Registration},
+    {path: '/profile', component: UserProfile, meta:{props: true}}
 ]
 
 const router = new VueRouter({

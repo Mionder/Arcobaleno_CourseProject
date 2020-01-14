@@ -13,8 +13,7 @@ var UserSchema = new Schema({
     },
     telephone: {
       type: String,
-      unique: true,
-      required: true
+      unique: true
     }
 })
 
@@ -30,6 +29,18 @@ var DrinkSchema = new Schema({
   size: {
     type: String,
     required: true
+  }
+})
+
+var CouponSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  code: {
+    type: String,
+    required: true,
+    unique: true
   }
 })
 
@@ -57,3 +68,4 @@ var TaskSchema = new Schema({
 module.exports = mongoose.model('Users', UserSchema);
 module.exports = mongoose.model('Drinks', DrinkSchema);
 module.exports = mongoose.model('Tasks', TaskSchema);
+module.exports = mongoose.model('Coupons',CouponSchema);
