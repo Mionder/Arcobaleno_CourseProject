@@ -35,6 +35,7 @@
                  <p class="pizzaSize">{{item.size}} грам</p>
                  <h3 class="pizzaPrice">{{item.price}} грн.</h3>
                  <div class="buttonPizza" @click="addPizza(item)">Додати до корзини</div>
+                 <router-link v-bind:to="'/pizzaprofile/'+item._id"><div class="buttonPizza">Детальніше</div></router-link>
                  <select name="" id="" v-for="zalipa in item.meal">
                      <option value="">
                             {{zalipa.size}}

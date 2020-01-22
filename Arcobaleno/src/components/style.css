@@ -284,6 +284,7 @@ img {
   text-align: center;
   font-size: 1.5rem;
   color: red;
+  font-weight: 600;
   padding-bottom: 5%; }
 
 .buttonPizza {
@@ -299,6 +300,7 @@ img {
   border: 1px solid black;
   transition: 0.5s;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .favouritePizza{
@@ -580,13 +582,15 @@ img {
 }
 
 /* LoginComponent */
-.logInPanel{
+.logInPanel,
+.SignInPanel{
   display: flex;
   justify-content: center;
   background-color: black;
 }
  
-.logInPanel p{
+.logInPanel p,
+.SignInPanel p{
   color: #fff;
   font-size: 2.4rem;
 }
@@ -923,6 +927,112 @@ img {
   background-color: #31516b;
   transition: 0.5s;
 }
+
+/*
+************************
+      FAQS
+************************
+*/
+.aboutUsFull{
+  padding-bottom: 20px;
+}
+
+.formToFAQ{
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.9;
+  border-radius: 20px;
+  margin: auto;
+  padding: 3%;
+}
+
+.formToFAQ label{
+  padding-top: 10px;
+}
+
+.formToFAQ input{
+  /* padding-left: 10px; */
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.buttonFormToFaqs{
+  padding: 10px 15px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  margin: auto;
+  background-color: rgb(30, 197, 66);
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+/*
+**************************
+      PIZZA PROFILE
+**************************
+*/
+.profilePizza{
+  /* padding-top: 100px; */
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blockPizza{
+  display: flex;
+  justify-content: space-between;
+}
+.blockPizza img{
+  max-width: 300px;
+  height: auto;
+}
+.pizzaInfo{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.pizzaProfileName{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.pizzaProfileComponents{
+  text-align: center;
+  display: block;
+  font-size: 18px;
+}
+.pizzaProfileComponents span{
+  font-weight: 700;
+}
+
+.pizzaProfileSize{
+  font-size: 20px;
+}
+
+.pizzaProfilePrice{
+  font-size: 25px;
+  text-align: center;
+  font-weight: 500;
+  color: rgba(206, 0, 0, 0.836);
+}
+.pizzaProfilePrice span{
+  color: #000;
+  font-weight: 600;
+}
+
+
+
 /* Media Types */
 
 @media screen and (max-width: 992px){
@@ -996,6 +1106,16 @@ img {
 
 #startMenuFull{
   width: 100%;
+}
+
+.blockPizza{
+  display: flex;
+  flex-direction: column;
+}
+
+.blockPizza img{
+  margin: auto;
+  padding: 10px 0pxN;
 }
 
 }

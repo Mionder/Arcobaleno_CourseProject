@@ -2,7 +2,7 @@
     <div class="aboutUsFull">
         <div class="container">
           <h1>FAQs</h1>
-           <div class="locationFull">
+           <!-- <div class="locationFull">
                 <p class="location">-Де ми знаходимось?</p>
                 <p class="answerLocation">-Ми знаходимося за адресою: м.Запоріжжя, вул.Запорізька, 46</p>
            </div>
@@ -14,7 +14,18 @@
             <div class="mailFull">
                 <p class="mail">-Я хочу залишити свій відгук, де я можу це зробити?</p>
                 <p class="answerMail">-Ви можете надіслати свій відгук на пошту: arcobalenopizzafaqs@gmail.com</p>
+            </div> -->
+
+            <div class="formToFAQ">
+                <label for="faqsName">Ваше ім'я</label>
+                <input type="text" placeholder="Ім'я" id="faqsName">
+                <label for="faqsEmail">Ваша пошта</label>
+                <input type="text" placeholder="Пошта" id="faqsEmail">
+                <label for="faqsSms">Повідомлення</label>
+                <input type="text" id="faqsSms" placeholder="Повідомлення">
+                <div class="buttonFormToFaqs">Відправити</div>
             </div>
+
         </div>
     </div>
 </template>
