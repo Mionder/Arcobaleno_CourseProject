@@ -12,7 +12,7 @@
                 
                     <router-link v-bind:to="'/'"><p class="navBar">FAQs</p></router-link>
                     <div id="userIcon" class="navBar">
-                        <router-link  v-bind:to="'/profile'"> <p> {{this.currentUser}}</p></router-link><router-link  v-bind:to="'/login'"><i class="fas fa-user"></i></router-link>
+                        <router-link  v-bind:to="'/profile'"> <p class="navBar"> {{this.currentUser}}</p></router-link><router-link  v-bind:to="'/login'"><i class="fas fa-user"></i></router-link>
                     </div>
                 <div id="myCartIcon" class="navBar">
                     <router-link v-bind:to = "'/cart/'"><i class="fas fa-shopping-cart" id="cart"></i></router-link>

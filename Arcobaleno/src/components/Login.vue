@@ -1,13 +1,11 @@
 <template>
     <div>
         <!-- <Header /> -->
-        <div class="logInPanel">
+        <!-- <div class="logInPanel">
             <p>Name</p>
             <input type="text" v-model ="loginEnter">
             <p>Password</p>
             <input type="text" v-model="passwordEnter">
-            <!-- <p>Telephone</p> -->
-            <!-- <input type="text" v-model="telephone">  -->
             <button @click="auth()">OK</button>
         </div>
 
@@ -17,7 +15,22 @@
             <p>Password</p>
             <input type="text" v-model="passwordReg">
             <button @click="registration()">GO</button>
-        </div>
+        </div> -->
+
+
+        <div class="logInBlock">
+            <div class="container-login">
+                <div class="wrapper">
+                    <p class="mainLabelLogin">Авторизація</p>
+                    <label for="login">Введіть логін</label>
+                    <input type="text" id="login" v-model ="loginEnter">
+                    <label for="password">Введіть пароль</label>
+                    <input type="password" id="password" v-model="passwordEnter">
+                    <div class="buttonLogIn" @click="auth()">Увійти</div>
+                    <p class="questionLogIn">Ще не зареєстровані? <router-link v-bind:to="'/registration'"><span>Зробіть це саме зараз</span></router-link></p>
+                </div>
+            </div>
+        </div> 
         
     </div> 
 </template>
@@ -40,7 +53,8 @@ export default {
             passwordEnter: '',
             loginReg: '',
             passwordReg: '',
-            usersMas:[]
+            usersMas:[],
+            check: false
             // telephone: ''
         }
     },
@@ -66,9 +80,18 @@ export default {
                 }
             })
         },
-        // isRegister(){
-
-        // },
+        isRegister(){
+            Vue.axios.get("http://localhost:3000/users").then((element)=>{
+                for(let i=0;i<element.data.lenght;i++){
+                    if(element.data[i].name != this.loginReg){
+                        this.check = false;
+                        console.log(this.check);
+                    }
+                    else this.check = true;
+                }
+            });
+            return this.check;
+        },
         registration(){
             // Vue.axios.get("http://localhost:3000/users").then((element)=>{
             //     for(let i=0;i<element.data.length;i++){
@@ -93,7 +116,8 @@ export default {
                 // console.log(element.data.indexOf(this.loginReg));
                 this.usersMas = element.data;
                 console.log(this.usersMas);
-                if(this.usersMas.find(this.loginReg) == -1){
+                isRegister();
+                if(this.check == false){
                     Vue.axios.post("http://localhost:3000/users",{
                             name: this.loginReg,
                             password: this.passwordReg,

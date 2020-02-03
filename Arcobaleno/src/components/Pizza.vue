@@ -33,18 +33,23 @@
                  <h1 class="pizzaName">{{item.name}}</h1>
                  <p class="pizzaComponents">{{item.components}}</p>
                  <p class="pizzaSize">{{item.size}} грам</p>
-                 <h3 class="pizzaPrice">{{item.price}} грн.</h3>
-                 <div class="buttonPizza" @click="addPizza(item)">Додати до корзини</div>
-                 <router-link v-bind:to="'/pizzaprofile/'+item._id"><div class="buttonPizza">Детальніше</div></router-link>
-                 <select name="" id="" v-for="zalipa in item.meal">
+                 <!-- <select name="" id="">
                      <option value="">
-                            {{zalipa.size}}
+                         {{item.size[0]}}
                      </option>
-                     <option value="">{{zalipa.price}}</option>
-                 </select>
+                 </select> -->
+                 <h3 class="pizzaPrice">{{item.price}} грн.</h3>
+
+                      <!-- <p> {{pizzaMasSize}}</p> -->
+                   
+                 <p></p>
+                 <div class="fullButtons">
+                    <div class="buttonPizza" @click="addPizza(item)">Додати до корзини</div>
+                    <router-link v-bind:to="'/pizzaprofile/'+item._id"><div class="buttonPizza">Детальніше</div></router-link>
+                 </div>
              </div>
         </div>
-</div>
+</div> 
 
 
     <div class="container" id="fullDrinks">
@@ -97,6 +102,7 @@ export default{
     data: function()  {return{
         pizzaMas: [],
         drinksMas: [],
+        pizzaMasSize: [],
         // value: ""
         //  sizePizza: 600,
          typePizza: "cheese",
@@ -106,7 +112,9 @@ export default{
     mounted() {
         Vue.axios.get("http://localhost:3000/tasks").then((elem)=>{
             this.pizzaMas = elem.data;
+            this.pizzaMasSize = elem.data[0].sizenew;
             console.log(this.pizzaMas);
+            
         }),
         Vue.axios.get("http://localhost:3000/drinks").then((element)=>{
             this.drinksMas = element.data;

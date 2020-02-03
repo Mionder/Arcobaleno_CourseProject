@@ -12,6 +12,7 @@ import Payment from './components/Payment.vue'
 import Registration from './components/Registration.vue'
 import UserProfile from './components/UserProfile.vue'
 import PizzaProfile from './components/PizzaProfile.vue'
+import Delivery from './components/Delivery.vue'
 
 const routes = [
     {path: '/', component: Pizza},
@@ -20,7 +21,8 @@ const routes = [
     {path: '/payment', component: Payment},
     {path: '/registration', component: Registration},
     {path: '/profile', component: UserProfile, meta:{props: true}},
-    {path: '/pizzaprofile/:id', component: PizzaProfile}
+    {path: '/pizzaprofile/:id', component: PizzaProfile},
+    {path: '/delivery', component: Delivery}
 ]
 
 const router = new VueRouter({

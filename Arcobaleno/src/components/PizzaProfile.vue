@@ -58,7 +58,8 @@ export default {
     },
     methods:{
         addPizza(value){
-            this.$store.commit('setPizza', { ...value, amount: 1 });
+            console.log();
+            this.$store.commit('setPizza', { ...this.pizzaOne, amount: 1 });
         },
         addDrink(value){
             value.amount = 1;

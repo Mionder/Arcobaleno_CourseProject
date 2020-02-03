@@ -3,7 +3,7 @@
   padding: 0;
   font-family: 'Montserrat', sans-serif; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,p {
   margin: 0;
   padding: 0; }
 
@@ -40,7 +40,9 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-around;
   flex-direction: row;
   /* margin: 0 auto; */
-  align-items: center; }
+  align-items: center; 
+
+}
 
 .navBar {
   color: #fff;
@@ -71,14 +73,18 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 0.2%;
   padding-right: 0.2%;
   width: 15%;
-  float: right; }
+  float: right; 
+
+}
 
 #buttonTel p {
   color: #000;
   text-align: center;
   text-transform: uppercase;
   font-size: 1.4rem;
-  font-weight: 700; }
+  font-weight: 700; 
+  padding-bottom: 7px;
+}
 
 
 #myCartIcon
@@ -111,12 +117,17 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-size: 4.6rem;
   font-weight: 700;
-  padding-bottom: 5%; }
+  padding-bottom: 5%; 
+  cursor: pointer;
+  color: #000;
+}
 
 .startMenuFull p {
   font-size: 2rem;
   font-weight: 700;
-  padding-bottom: 0.5%; }
+  padding-bottom: 0.5%; 
+  color: #000;
+}
 
 .buttonStartMenu {
   display: flex;
@@ -127,21 +138,23 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #fff;
   color: #000;
   margin-right: 5%;
-  padding: 1.2%;
+  padding: 10px 20px;
   font-size: 1.6rem;
   text-align: center;
   font-weight: 500; 
   cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.507);
 }
 
 .callBut {
   background-color: #000;
   color: #fff;
-  padding: 1.2%;
+  padding: 10px 20px;
   font-size: 1.6rem;
   text-align: center;
   font-weight: 500; 
   cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.596);
 }
 
 /* Sales */
@@ -306,11 +319,15 @@ img {
 .favouritePizza{
   padding-top: 2%;
   font-family: 'Yeon Sung', cursive;
-  font-size: 4.5rem;
+  font-size: 4.5rem; 
   text-align: center;
   color: #000;
 }
-
+.fullButtons{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 .buttonPizza:hover{
   transition: 0.5s;
   background-color: #000;
@@ -403,8 +420,10 @@ img {
 
 /* ФУТЕР */
 .footer {
-  background-color: #353b48;
-  color: #fff; }
+  /* background-color: #353b48; */
+  color: #fff; 
+  background-color: #000;
+}
 
 .fullTextFooter {
   padding-top: 3%;
@@ -451,11 +470,16 @@ img {
 /* CartComponent */
 
 .orderThis{
-  background: url("../img/profile.jpeg") center no-repeat;
+  /* background: url("https://images.pexels.com/photos/3493777/pexels-photo-3493777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") center no-repeat; */
   -webkit-background-size: cover;
   background-size: cover;
-  /* background-color: #1a1a1a; */
-  padding-top: 7%;
+  background-color: #202020;
+  /* padding-top: 7%; */
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .redCartSpan{
@@ -593,6 +617,77 @@ img {
 .SignInPanel p{
   color: #fff;
   font-size: 2.4rem;
+}
+
+.logInBlock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(https://images.pexels.com/photos/1049626/pexels-photo-1049626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)center no-repeat;
+  background-size: cover;
+}
+
+.container-login{
+  max-width: 700px;
+  margin: auto;
+  width: 100%;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  background-color: rgba(202, 202, 202, 0.678);
+  border-radius: 25px;
+  max-width: 600px;
+  padding: 40px;
+  color: #000;
+}
+
+.mainLabelLogin{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+.wrapper label{
+  padding-top: 5px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.buttonLogIn{
+  padding: 10px 50px;
+  margin: auto;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 20px;
+  text-align: center;
+  background-color: rgba(216, 0, 0, 0.74);
+  color: #fff;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: 0.75s;
+}
+
+.buttonLogIn:hover{
+  transition: 0.75s;
+  background-color: rgba(216, 0, 0, 0.904);
+}
+
+.questionLogIn{
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 25px;
+}
+.questionLogIn span{
+  color: rgb(167, 0, 0);
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /* PAYMENT */
@@ -988,6 +1083,10 @@ img {
   display: flex;
   justify-content: space-between;
 }
+.blockPizza .buttonPizza{
+  padding: 10px 40px;
+}
+
 .blockPizza img{
   max-width: 300px;
   height: auto;
@@ -1003,14 +1102,16 @@ img {
 
 .pizzaProfileName{
   text-align: center;
-  font-size: 25px;
+  font-size: 32px;
   font-weight: 600;
+  padding-bottom: 20px;
 }
 
 .pizzaProfileComponents{
   text-align: center;
   display: block;
   font-size: 18px;
+  padding-bottom: 15px;
 }
 .pizzaProfileComponents span{
   font-weight: 700;
@@ -1018,6 +1119,7 @@ img {
 
 .pizzaProfileSize{
   font-size: 20px;
+  padding-bottom: 15px;
 }
 
 .pizzaProfilePrice{
@@ -1025,6 +1127,7 @@ img {
   text-align: center;
   font-weight: 500;
   color: rgba(206, 0, 0, 0.836);
+  padding-bottom: 15px;
 }
 .pizzaProfilePrice span{
   color: #000;
@@ -1046,6 +1149,10 @@ img {
   }
   #fullPaymentBlock{
     padding-top: 10%;
+  }
+  .header .container{
+    max-width: 850px;
+    width: 100%;
   }
 }
 

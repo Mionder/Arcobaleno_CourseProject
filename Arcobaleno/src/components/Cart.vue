@@ -6,7 +6,7 @@
             <div class="container">
                 <h1 class="cartTitle">Ваша корзина мрії:</h1>
                     <div class="cartSpace">
-                        <p v-for="item in PizzaMas"  v-bind:key="item._id"> 
+                        <p v-for="item in PizzaMas"  v-bind:key="item._id" v-show="item.amount>0"> 
                             <!-- v-if="item.amount>0" no! computed PizzaMas with -->
                             <img :src="item.img" alt="" class="imgCartSpan">
                             <span class="nameCartSpan">{{item.name}}</span> 
@@ -77,9 +77,6 @@ export default {
         }),
         fullPrice() {
              var fullPriceCart=0;
-            // for(let i=0;i<this.PizzaMas.length; i++){
-            //        fullPriceCart += this.PizzaMas[i].price * this.PizzaMas[i].amount;
-            // }
             this.PizzaMas.forEach(function(item, i, arr){
                 fullPriceCart += arr[i].price * arr[i].amount; 
             });

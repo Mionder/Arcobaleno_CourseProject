@@ -41,6 +41,7 @@
                             Натисни та отпримай
                         </div>
                         <p>Ти можешь отримати купон на знижку <span>1 раз</span> на тиждень</p>
+                        <p>{{currentCoupon}}</p>
                         <div class="playingZone" v-for="item in couponMas">
                             <!-- <p>{{item.code}}</p> -->
                         </div>
@@ -69,7 +70,8 @@ export default {
             currentUser: "",
             usersMas: {},
             myPlayZone: '',
-            couponMas: []
+            couponMas: [],
+            currentCoupon: ''
         }
     },
     computed: {
@@ -106,10 +108,13 @@ export default {
             return this.myPlayZone;
         },
         goPlay(){
-            for(let i=0;i<this.couponMas.length;i++){
-                alert (this.couponMas[i].code);
-            }
-            
+            let i;
+            i = this.getRandomInt(this.couponMas.length); 
+            this.currentCoupon = (this.couponMas[i].name);
+            return this.currentCoupon;
+        },
+        getRandomInt(max){
+            return Math.floor(Math.random() * Math.floor(max));
         }
     }
 }

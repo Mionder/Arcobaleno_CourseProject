@@ -65,6 +65,7 @@ export default {
         clearLocal(){
             localStorage.clear();
             this.$router.push('/');
+            window.location.reload()
             /* Как сделать что бы сразу стирало LocalStorage, а не при обновлении */
         },
         paymentLiqPayData() {
